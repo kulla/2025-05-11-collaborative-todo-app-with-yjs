@@ -3,10 +3,10 @@ import { pluginReact } from '@rsbuild/plugin-react'
 
 export default defineConfig({
   html: {
-    title: 'Prototype',
+    title: 'ToDo App with Yjs',
   },
   output: {
-    assetPrefix: '/rsbuild-react-bun-biome-starter-template/',
+    assetPrefix: '/2025-05-11-collaborative-todo-app-with-yjs/',
   },
   plugins: [pluginReact()],
 })
