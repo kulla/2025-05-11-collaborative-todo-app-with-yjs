@@ -32,7 +32,7 @@ export default function App() {
             placeholder="Add a new todo"
             className="input input-bordered w-full max-w-xs"
           />
-          <button onClick={addTodo} className="btn btn-primary">
+          <button onClick={addTodo} className="btn btn-primary" type="button">
             Add
           </button>
         </div>
@@ -46,6 +46,7 @@ export default function App() {
               <button
                 onClick={() => deleteTodo(todo.id)}
                 className="btn btn-error btn-sm"
+                type="button"
               >
                 Delete
               </button>
