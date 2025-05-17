@@ -7,22 +7,16 @@
 
 ## Get started
 
-Start the dev server:
+Start the signaling server for WebRTC:
+
+```bash
+bun run server
+```
+
+Start the dev server (for the frontend) and open `http://localhost:3000` in your browser:
 
 ```bash
 bun dev
-```
-
-Build the app for production:
-
-```bash
-bun run build
-```
-
-Preview the production build locally:
-
-```bash
-bun preview
 ```
 
 ## Maintenance
