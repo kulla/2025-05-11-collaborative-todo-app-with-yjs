@@ -1,4 +1,5 @@
 import * as Y from 'yjs'
+import { WebrtcProvider } from 'y-webrtc'
 import { equals } from 'ramda'
 import { useRef, useState, useSyncExternalStore } from 'react'
 import './App.css'
@@ -9,6 +10,14 @@ interface Todo {
 }
 
 const ydoc = new Y.Doc()
+const provider = new WebrtcProvider('todo-app', ydoc, {
+  signaling: ['ws://localhost:4444'],
+})
+
+provider.on('synced', (isSynced) => {
+  console.log('Synced:', isSynced)
+})
+
 const yTodos = ydoc.getArray<Todo>('todos')
 
 export default function App() {
@@ -77,6 +86,10 @@ export default function App() {
           </li>
         ))}
       </ul>
+      <h1>State</h1>
+      <pre>
+        {JSON.stringify({ connected: provider.connected }, undefined, 2)}
+      </pre>
     </main>
   )
 }
